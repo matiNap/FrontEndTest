@@ -1,4 +1,5 @@
 import { SimpleTheme } from 'react-native-simple';
+import { Dimensions } from 'react-native';
 
 const theme: SimpleTheme = {
   palette: {
@@ -15,6 +16,9 @@ const theme: SimpleTheme = {
   },
 };
 
+const HEIGHT = Dimensions.get('screen').height;
+const WIDTH = Dimensions.get('screen').width;
+
 const metrics = {
   margin: {
     small: 5,
@@ -28,6 +32,8 @@ const metrics = {
     medium: 15,
     big: 20,
   },
+  width: WIDTH,
+  height: HEIGHT,
 };
 
 export default theme;

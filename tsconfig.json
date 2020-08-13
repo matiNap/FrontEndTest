@@ -29,10 +29,7 @@
 
       "_components/*": ["./screens/components/*"],
 
-      "_typography": ["./theme/typography.ts"],
-      "_palette": ["./theme/palette.ts"],
-      "_metrics": ["./theme/metrics.ts"],
-      "_globals": ["./theme/globals.ts"],
+      "_theme": ["./theme/theme.ts"],
 
       "_store": ["./store.ts"]
     }
