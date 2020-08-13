@@ -19,7 +19,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native-gesture-handler';
 import { metrics } from '_theme';
-import { Avatar } from 'react-native-elements';
+import { User } from '_types';
 
 const Search = () => {
   const { currentPalette } = useTheme();
@@ -53,14 +53,14 @@ const Search = () => {
             keyExtractor={({ id }) => id}
             contentContainerStyle={styles.listContent}
             data={users}
-            renderItem={({ item }) => {
+            renderItem={({ item }: { item: User }) => {
               const { username, id } = item;
               const imageUri = item['profile_image'].medium;
               return (
                 <ListItem key={id} style={styles.listItem}>
                   <TouchableWithoutFeedback
                     onPress={() => {
-                      dispatch(setCurrentUser({ id }));
+                      dispatch(setCurrentUser({ ...item }));
                       navigate('Profile');
                     }}
                   >

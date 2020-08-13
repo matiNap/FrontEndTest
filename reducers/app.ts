@@ -8,6 +8,7 @@ const INIT_STATE = {
   demo: false,
   searched: { data: null, loading: false },
   currentUser: null,
+  currentImages: { data: null, loading: false },
 };
 
 const appSlice = createSlice({
@@ -26,8 +27,15 @@ const appSlice = createSlice({
     setSearchedLoading: (state) => {
       state.searched.loading = true;
     },
+    setSearchImagesLoading: (state) => {
+      state.searched.loading = true;
+    },
     setCurrentUser: (state, action) => {
       state.currentUser = action.payload;
+      state.currentImages = INIT_STATE.currentImages;
+    },
+    setCurrentImages: (state, action) => {
+      state.currentImages = { data: action.payload, loading: false };
     },
   },
   extraReducers: {
@@ -41,6 +49,8 @@ export const {
   setSearchedUser,
   setSearchedLoading,
   setCurrentUser,
+  setCurrentImages,
+  setSearchImagesLoading,
 } = appSlice.actions;
 
 export default appSlice.reducer;
@@ -59,6 +69,23 @@ export const searchUser = (name: string): AppThunk => async (
         if (json.errors) {
           dispatch(setSearchedUser(null));
         } else dispatch(setSearchedUser(json.results));
+      });
+  } catch (error) {
+    console.log(error);
+  }
+};
+export const fetchImages = (name: string): AppThunk => async (
+  dispatch,
+) => {
+  dispatch(setSearchImagesLoading());
+  try {
+    unsplash.users
+      .photos(name, 1, 10, 'popular', false)
+      .then(toJson)
+      .then((json: any) => {
+        if (json.errors) {
+          dispatch(setCurrentImages(null));
+        } else dispatch(setCurrentImages(json));
       });
   } catch (error) {
     console.log(error);
