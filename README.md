@@ -10,3 +10,10 @@ Made with my own npm package https://matinap.github.io/react-native-simple/
 
 ### Start on tunnel
 `npm start` or `expo start --tunnel`
+
+### Run on device
+- download expo applicaton on your phone
+
+- enter `localhost:19002` in browser
+
+- copy QR code via expo application on phone
