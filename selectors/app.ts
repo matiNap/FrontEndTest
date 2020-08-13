@@ -1,3 +1,6 @@
 import { RootState } from '_store';
 
-export const selectDemo = (state: RootState) => state.app.demo;
+export const selectSearchedUsers = (state: RootState) =>
+  state.app.searched;
+export const selectCurrentUser = (state: RootState) =>
+  state.app.currentUser;

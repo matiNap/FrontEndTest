@@ -18,7 +18,10 @@ export default function App() {
   if (!fontsLoaded) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator color={'#313131'} size={50} />
+        <ActivityIndicator
+          color={theme.currentPalette?.accent}
+          size={50}
+        />
       </View>
     );
   } else {
@@ -28,7 +31,7 @@ export default function App() {
           <NavigationContainer>
             <ThemeProvider darkMode={false} {...{ theme }}>
               <AppContainer />
-              <StatusBar style={'dark'} />
+              <StatusBar style={'light'} />
             </ThemeProvider>
           </NavigationContainer>
         </PersistGate>

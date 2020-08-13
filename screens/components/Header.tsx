@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { Header, Row } from 'react-native-simple';
+import { Header } from 'react-native-simple';
 
 interface Props {
   children: ReactNode | ReactNode[];

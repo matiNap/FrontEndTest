@@ -13,10 +13,7 @@ module.exports = {
 
         _components: './screens/components/',
 
-        _typography: './theme/typography',
-        _palette: './theme/palette',
-        _metrics: './theme/metrics',
-        _globals: './theme/globals',
+        _typography: './theme/theme.ts',
 
         _store: './store.ts',
       },
