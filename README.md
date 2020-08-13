@@ -1,10 +1,10 @@
 # Front-end developer test
 
-Getting started
+## Getting started
 
 
-# Install packages
+### Install packages
 `npm i`
 
-# Start on tunnel
+### Start on tunnel
 `npm start` or `expo start --tunnel`
