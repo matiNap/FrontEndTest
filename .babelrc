@@ -16,10 +16,7 @@
           "_components": "./screens/components/",
 
           //Theming
-          "_typography": "./theme/typography",
-          "_palette": "./theme/palette",
-          "_metrics": "./theme/metrics",
-          "_globals": "./theme/globals",
+          "_theme": "./theme/theme.ts",
 
           // In files now we can: import {RootState} from '_store'
           "_store": "./store.ts"

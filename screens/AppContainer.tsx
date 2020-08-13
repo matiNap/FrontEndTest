@@ -1,16 +1,20 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import Screen1 from './Main/Screen1';
-import Screen2 from './Main/Screen2';
+import Profile from './Main/Profile';
+import Search from './Main/Search';
 
 const Stack = createStackNavigator();
 
 export default () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="screen1" component={Screen1} />
-      <Stack.Screen name="screen2" component={Screen2} />
+      <Stack.Screen
+        name="Search"
+        component={Search}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="Profile" component={Profile} />
     </Stack.Navigator>
   );
 };
